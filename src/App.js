@@ -5,8 +5,7 @@ import Navbar from './components/Navbar'
 import AlertExample from './features/AlertExample'
 import AlertManager from './features/AlertManager'
 
-function App({ signOut, user }) {
-  console.log(user)
+function App({ signOut }) {
   return (
     <Container maxWidth="md">
       <Navbar signOut={signOut} />
