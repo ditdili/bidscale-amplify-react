@@ -3,6 +3,7 @@ import '@aws-amplify/ui-react/styles.css'
 import { Container, Grid } from '@mui/material'
 import Navbar from './components/Navbar'
 import AlertExample from './features/AlertExample'
+import AlertManager from './features/AlertManager'
 
 function App({ signOut, user }) {
   console.log(user)
@@ -15,7 +16,7 @@ function App({ signOut, user }) {
           <AlertExample />
         </Grid>
         <Grid item xs={12} sm={6} md={5}>
-          Alerts
+          <AlertManager />
         </Grid>
       </Grid>
     </Container>

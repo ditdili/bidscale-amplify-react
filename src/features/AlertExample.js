@@ -1,8 +1,12 @@
 import { useFormik } from 'formik'
+import { useDispatch } from 'react-redux'
 import AlertForm from '../components/AlertForm'
 import { validationSchema } from '../utils/inputValidationSchema'
+import { useAlertReducer } from './AlertManager'
 
 const AlertExample = () => {
+  const dispatch = useDispatch()
+
   const formik = useFormik({
     initialValues: {
       id: '',
@@ -13,8 +17,9 @@ const AlertExample = () => {
       alertTitle: '',
     },
     validationSchema,
-    onSubmit: values => {
-      console.log(values)
+    onSubmit: (values, { resetForm }) => {
+      dispatch(useAlertReducer.actions.alertAdd(values))
+      resetForm()
     },
   })
 
