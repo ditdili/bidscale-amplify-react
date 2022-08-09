@@ -4,3 +4,4 @@
 **/*.min.js
 **/.env
 **/amplify
+README.MD
