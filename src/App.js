@@ -4,8 +4,13 @@ import { Container, Grid } from '@mui/material'
 import { useDispatch } from 'react-redux'
 import Navbar from './components/Navbar'
 import AlertExample from './features/AlertExample'
-import AlertManager, { listAlerts } from './features/AlertManager'
+import AlertManager, {
+  listAlerts,
+  useAlertReducer,
+} from './features/AlertManager'
 import { useEffect, useRef } from 'react'
+import { API } from 'aws-amplify'
+import { onCreateAlarmNotification } from './graphql/subscriptions'
 
 function App({ signOut }) {
   const dispatch = useDispatch()
@@ -16,6 +21,21 @@ function App({ signOut }) {
       ref.current = false
       dispatch(listAlerts())
     }
+  }, [dispatch])
+
+  useEffect(() => {
+    API.graphql({
+      query: onCreateAlarmNotification,
+      authMode: 'AMAZON_COGNITO_USER_POOLS',
+    }).subscribe({
+      next: result => {
+        dispatch(
+          useAlertReducer.actions.listUpdate(
+            result.value.data.onCreateAlarmNotification,
+          ),
+        )
+      },
+    })
   }, [dispatch])
 
   return (

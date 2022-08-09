@@ -46,6 +46,17 @@ export const useAlertReducer = createSlice({
   name: 'alerts',
   initialState,
   reducers: {
+    listUpdate: {
+      reducer: (state, action) => {
+        const exists = state.alerts.find(
+          alert => alert.id === action.payload.id,
+        )
+
+        if (!exists) {
+          state.alerts.push(action.payload)
+        }
+      },
+    },
     alertDelete: {
       reducer: (state, action) => {
         const newAlerts = state.alerts.filter(
