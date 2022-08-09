@@ -27,7 +27,7 @@ const AlertComponent = ({ alert }) => {
         severity={alertType}
         onMouseOver={pause}
         onMouseOut={resume}
-        sx={{}}
+        sx={{ mt: 1 }}
       >
         {alertTitle && (
           <Typography sx={{ fontSize: 14 }} variant="h5" component="div">

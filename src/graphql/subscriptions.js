@@ -6,6 +6,7 @@ export const onCreateAlarmNotification = /* GraphQL */ `
     onCreateAlarmNotification {
       id
       timeLimit
+      timeLimitDateTime
       text
       link
       alertType
@@ -14,12 +15,13 @@ export const onCreateAlarmNotification = /* GraphQL */ `
       updatedAt
     }
   }
-`
+`;
 export const onUpdateAlarmNotification = /* GraphQL */ `
   subscription OnUpdateAlarmNotification {
     onUpdateAlarmNotification {
       id
       timeLimit
+      timeLimitDateTime
       text
       link
       alertType
@@ -28,12 +30,13 @@ export const onUpdateAlarmNotification = /* GraphQL */ `
       updatedAt
     }
   }
-`
+`;
 export const onDeleteAlarmNotification = /* GraphQL */ `
   subscription OnDeleteAlarmNotification {
     onDeleteAlarmNotification {
       id
       timeLimit
+      timeLimitDateTime
       text
       link
       alertType
@@ -42,4 +45,4 @@ export const onDeleteAlarmNotification = /* GraphQL */ `
       updatedAt
     }
   }
-`
+`;

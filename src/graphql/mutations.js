@@ -9,6 +9,7 @@ export const createAlarmNotification = /* GraphQL */ `
     createAlarmNotification(input: $input, condition: $condition) {
       id
       timeLimit
+      timeLimitDateTime
       text
       link
       alertType
@@ -17,7 +18,7 @@ export const createAlarmNotification = /* GraphQL */ `
       updatedAt
     }
   }
-`
+`;
 export const updateAlarmNotification = /* GraphQL */ `
   mutation UpdateAlarmNotification(
     $input: UpdateAlarmNotificationInput!
@@ -26,6 +27,7 @@ export const updateAlarmNotification = /* GraphQL */ `
     updateAlarmNotification(input: $input, condition: $condition) {
       id
       timeLimit
+      timeLimitDateTime
       text
       link
       alertType
@@ -34,7 +36,7 @@ export const updateAlarmNotification = /* GraphQL */ `
       updatedAt
     }
   }
-`
+`;
 export const deleteAlarmNotification = /* GraphQL */ `
   mutation DeleteAlarmNotification(
     $input: DeleteAlarmNotificationInput!
@@ -43,6 +45,7 @@ export const deleteAlarmNotification = /* GraphQL */ `
     deleteAlarmNotification(input: $input, condition: $condition) {
       id
       timeLimit
+      timeLimitDateTime
       text
       link
       alertType
@@ -51,4 +54,4 @@ export const deleteAlarmNotification = /* GraphQL */ `
       updatedAt
     }
   }
-`
+`;

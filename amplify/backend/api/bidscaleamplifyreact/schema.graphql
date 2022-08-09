@@ -1,6 +1,7 @@
 type AlarmNotification @model @auth(rules: [{ allow: private }]) {
   id: ID!
   timeLimit: Int!
+  timeLimitDateTime: AWSDateTime!
   text: String!
   link: String!
   alertType: String!

@@ -6,6 +6,7 @@ export const getAlarmNotification = /* GraphQL */ `
     getAlarmNotification(id: $id) {
       id
       timeLimit
+      timeLimitDateTime
       text
       link
       alertType
@@ -14,7 +15,7 @@ export const getAlarmNotification = /* GraphQL */ `
       updatedAt
     }
   }
-`
+`;
 export const listAlarmNotifications = /* GraphQL */ `
   query ListAlarmNotifications(
     $filter: ModelAlarmNotificationFilterInput
@@ -29,6 +30,7 @@ export const listAlarmNotifications = /* GraphQL */ `
       items {
         id
         timeLimit
+        timeLimitDateTime
         text
         link
         alertType
@@ -39,4 +41,4 @@ export const listAlarmNotifications = /* GraphQL */ `
       nextToken
     }
   }
-`
+`;
