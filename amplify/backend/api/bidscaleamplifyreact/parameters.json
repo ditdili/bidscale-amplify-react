@@ -1,0 +1,11 @@
+{
+  "AppSyncApiName": "bidscaleamplifyreact",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authbidscaleamplifyreact9d14ff36",
+      "Outputs.UserPoolId"
+    ]
+  }
+}

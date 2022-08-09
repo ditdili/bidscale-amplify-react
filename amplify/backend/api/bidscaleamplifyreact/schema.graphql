@@ -1,0 +1,8 @@
+type AlarmNotification @model @auth(rules: [{ allow: private }]) {
+  id: ID!
+  timeLimit: Int!
+  text: String!
+  link: String!
+  alertType: String!
+  alertTitle: String!
+}
